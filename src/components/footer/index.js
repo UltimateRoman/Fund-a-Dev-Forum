@@ -1,5 +1,6 @@
 import React from 'react'
 import './index.scss'
+import './index.css'
 
 export default function Footer() {
     return (
@@ -30,8 +31,8 @@ export default function Footer() {
       </div>
     </div>
     <div className="row mt-5">
-      <div className="col copyright">
-        <p className><small className="text-white-50">© 2019. All Rights Reserved.</small></p>
+      <div className="colcopyright">
+        <p className><small className="text-white-50">Copyright c 2020 coding-fortress</small></p>
       </div>
     </div>
   </div>

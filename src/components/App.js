@@ -7,6 +7,8 @@ import Main from './Main'
 import Home from './Home'
 import './App.css';
 import Footer from './footer/index'
+import Layout from './Layout/';
+
 
 class App extends Component {
 
@@ -84,7 +86,8 @@ class App extends Component {
   render() {
     return (
       <Router>        
-        <Navbar account={this.state.account} />
+        {/* <Navbar account={this.state.account} /> */}
+        <Layout>
         <Route exact path="/" component={Home} />
         <Route exact path="/projects" render={props => (
           <React.Fragment>
@@ -98,7 +101,8 @@ class App extends Component {
             }
           </React.Fragment>
         )} />
-        <Footer/>
+        </Layout>
+      
       </Router>
     );
   }
