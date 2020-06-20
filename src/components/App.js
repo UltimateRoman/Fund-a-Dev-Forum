@@ -4,8 +4,11 @@ import Web3 from 'web3';
 import DPFforum from '../abis/DPFforum.json';
 import Navbar from './Navbar'
 import Main from './Main'
-import Home from './Home'
+import Home from './home/Home'
 import './App.css';
+import Footer from './footer/index'
+import Layout from './Layout/';
+
 
 class App extends Component {
 
@@ -83,7 +86,8 @@ class App extends Component {
   render() {
     return (
       <Router>        
-        <Navbar account={this.state.account} />
+        {/* <Navbar account={this.state.account} /> */}
+        <Layout>
         <Route exact path="/" component={Home} />
         <Route exact path="/projects" render={props => (
           <React.Fragment>
@@ -97,6 +101,8 @@ class App extends Component {
             }
           </React.Fragment>
         )} />
+        </Layout>
+      
       </Router>
     );
   }
