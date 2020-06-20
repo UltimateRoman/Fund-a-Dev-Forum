@@ -32,66 +32,73 @@ class Main extends Component {
                     const image = this.pimage.value
                     this.props.addProject(tag, description, image)
                   }}>
-                  <div className="form-group mr-sm-2">
-                    <input
-                      id="pdesc"
-                      type="text"
-                      ref={(input) => { this.pdesc = input }}
-                      className="form-control"
-                      placeholder="Description"
-                      required />
-                      <br/>
+                  <center>
+                  <h1>Add Your Project</h1>
+                  <div class="form-container">
                     <input
                       id="ptag"
                       type="text"
                       ref={(input) => { this.ptag = input }}
                       className="form-control"
-                      placeholder="Tag?"
+                      placeholder="Project Tag"
                       required />
+                      <br/>
+                    <textarea
+                      id="pdesc"
+                      type="text"
+                      style={{ height: 200 }}
+                      ref={(input) => { this.pdesc = input }}
+                      className="form-control"
+                      placeholder="Write a description of your project and requirements."
+                      required />
+                      <br/>
                     <input
                       id="pimage"
                       type="text"
                       ref={(input) => { this.pimage = input }}
                       className="form-control"
-                      placeholder="Image link"
-                      required />
+                      placeholder="Image link" />
                   </div>
-                  <button type="submit" className="btn btn-primary btn-block">Add</button>
+                  <br/>
+                  <button type="submit" className="btn btn-outline-info">Add Project</button>
+                  </center>
                 </form>
-                <input type="text" value={this.state.search} onChange={this.updateSearch.bind(this)} />
+                <br/><br/><br/><br/>
+                <h1>Search and Fund Projects</h1>
+                <input type="text" class="form-control" value={this.state.search} onChange={this.updateSearch.bind(this)} />
                 <p>&nbsp;</p>
                 { filteredProjects.map((project, key) => {
                   return(
-                    <div className="card mb-4" key={key} >
+                    <div class="coupon" key={key} >
                       <div className="card-header">
-                        <img
+                      <p class="badge badge-primary">{project.tag}</p>
+                      <br/>
+                      <img
                           className='mr-2'
-                          width='30'
-                          height='30'
+                          style={{ width: 200, height: 200 }}
                           alt='Not provided'
                           src={project.image.toString()}
-                        />
-                        <small className="text-muted">{project.devp}</small>
+                      />
+                      <br/>
+                      <small>Developer: {project.devp}</small>
                       </div>
                       <ul id="postList" className="list-group list-group-flush">
                         <li className="list-group-item">
                           <p>{project.description}</p>
                           <br/>
-                          <p>{project.tag}</p>
                         </li>
                         <li key={key} className="list-group-item py-2">
                           <small className="float-left mt-1 text-muted">
-                            TIPS: {window.web3.utils.fromWei(project.fundrec.toString(), 'Ether')} ETH
-                          </small>
+                            Funds received: {window.web3.utils.fromWei(project.fundrec.toString(), 'Ether')} ETH
+                          </small>      
                           <button
-                            className="btn btn-link btn-sm float-right pt-0"
+                            className="btn btn-info"
                             name={project.id}
                             onClick={(event) => {
                               let fundrec = window.web3.utils.toWei('0.1', 'Ether')
                               this.props.fundProject(event.target.name, fundrec)
-                            }}
-                          >
-                            TIP 0.1 ETH
+                            }}>
+                            Fund ETH
                           </button>
                         </li>
                       </ul>
