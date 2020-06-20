@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(2),
   },
   title: {
-    flexGrow: 1,
+    flexGrow: 1
   },
 }));
 
@@ -30,14 +30,17 @@ export default function ButtonAppBar() {
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            DPF
+          <Typography variant="h6" className={classes.title} style={{color:"white"}}>
+          <Link to="/" >
+            <div style={{color:"white"}}>DPF</div>
+          
+          </Link>
           </Typography>
           <Link to="/">
-          <Button color="white">Home</Button>
+          <Button style={{color:"white"}}>Home</Button>
           </Link>
           <Link to="/projects" >
-          <Button color="red">Projects</Button>
+          <Button style={{color:"white"}}>Projects</Button>
           </Link>
         </Toolbar>
       </AppBar>
