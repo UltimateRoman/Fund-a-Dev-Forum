@@ -6,6 +6,7 @@ import Navbar from './Navbar'
 import Main from './Main'
 import Home from './Home'
 import './App.css';
+import Footer from './footer/index'
 
 class App extends Component {
 
@@ -97,6 +98,7 @@ class App extends Component {
             }
           </React.Fragment>
         )} />
+        <Footer/>
       </Router>
     );
   }
