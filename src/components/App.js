@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Web3 from 'web3';
 import DPFforum from '../abis/DPFforum.json';
+import Navbar from './Navbar'
+import Main from './Main'
 import './App.css';
 
 class App extends Component {
@@ -46,11 +48,48 @@ class App extends Component {
     }
   }
 
+  addProject(tag, description, image) {
+    this.setState({ loading: true })
+    this.state.dpf.methods.addProject(tag, description, image).send({ from: this.state.account }).once('confirmation', (n, receipt) => {
+      this.setState({ loading: false })
+      window.location.reload()  
+    })
+  }
+
+  fundProject(id, fundrec) {
+    this.setState({ loading: true })
+    this.state.dpf.methods.fundProject(id).send({ from: this.state.account, value: fundrec })
+    .once('confirmation', (n, receipt) => {
+      this.setState({ loading: false })
+      window.location.reload()
+    })
+  }
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      account: '',
+      dpf: null,
+      pCount: 0,
+      projects: [],
+      loading: true
+    }
+    this.addProject = this.addProject.bind(this)
+    this.fundProject = this.fundProject.bind(this)
+  }
 
   render() {
     return (
       <div>
-        
+        <Navbar account={this.state.account} />
+        { this.state.loading
+          ? <center><br/><br/><br/><br/><br/><br/><div class="loader"></div></center>
+          : <Main
+              projects={this.state.projects}
+              addProject={this.addProject}
+              fundProject={this.fundProject}
+            />
+        }
       </div>
     );
   }
