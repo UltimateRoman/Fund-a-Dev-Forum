@@ -5,6 +5,7 @@ import DPFforum from '../abis/DPFforum.json';
 import Main from './Main'
 import Navbar from './Navbar'
 import Home from './Home'
+import Footer from './Footer'
 import './App.css';
 
 
@@ -98,7 +99,8 @@ class App extends Component {
             }
           </React.Fragment>
         )} />
-      </Router>
+        <Footer />
+        </Router>
     );
   }
 }
