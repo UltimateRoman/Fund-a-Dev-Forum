@@ -32,7 +32,7 @@ export default function ButtonAppBar() {
           </IconButton>
           <Typography variant="h6" className={classes.title} style={{color:"white"}}>
           <Link to="/" >
-            <div style={{color:"white"}}>DPF</div>
+            <div style={{color:"white"}}>Fund-a-Dev</div>
           
           </Link>
           </Typography>
