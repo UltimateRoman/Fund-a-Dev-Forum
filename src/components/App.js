@@ -4,7 +4,7 @@ import Web3 from 'web3';
 import DPFforum from '../abis/DPFforum.json';
 import Navbar from './Navbar'
 import Main from './Main'
-import Home from './Home'
+import Home from './home/Home'
 import './App.css';
 import Footer from './footer/index'
 import Layout from './Layout/';
