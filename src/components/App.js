@@ -2,12 +2,10 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Web3 from 'web3';
 import DPFforum from '../abis/DPFforum.json';
-import Navbar from './Navbar'
 import Main from './Main'
-import Home from './home/Home'
+import Navbar from './Navbar'
+import Home from './Home'
 import './App.css';
-import Footer from './footer/index'
-import Layout from './Layout/';
 
 
 class App extends Component {
@@ -85,9 +83,8 @@ class App extends Component {
 
   render() {
     return (
-      <Router>        
-        {/* <Navbar account={this.state.account} /> */}
-        <Layout>
+      <Router>   
+        <Navbar />     
         <Route exact path="/" component={Home} />
         <Route exact path="/projects" render={props => (
           <React.Fragment>
@@ -101,8 +98,6 @@ class App extends Component {
             }
           </React.Fragment>
         )} />
-        </Layout>
-      
       </Router>
     );
   }
