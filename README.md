@@ -11,7 +11,7 @@ $ npm install -g ganache-cli
 You also would need to have a wallet like Metamask.
 
 ```
-$ git clone https://github.com/UltimateRoman/Fund-a-Dev
+$ git clone https://github.com/UltimateRoman/Ethereum-Track-Fund-a-Dev
 $ cd Fund-a-Dev
 $ npm install
 $ ganache-cli -p 7545
