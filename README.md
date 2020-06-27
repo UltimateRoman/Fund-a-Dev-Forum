@@ -8,11 +8,11 @@ Install truffle and ganache-cli
 $ npm install -g truffle
 $ npm install -g ganache-cli
 ```
-You also would need to have a wallet like Metamask.
+You would also require a wallet like Metamask and set custom RPC to localhost:7545
 
 ```
 $ git clone https://github.com/UltimateRoman/Ethereum-Track-Fund-a-Dev
-$ cd Fund-a-Dev
+$ cd Ethereum-Track-Fund-a-Dev
 $ npm install
 $ ganache-cli -p 7545
 $ truffle migrate --reset
