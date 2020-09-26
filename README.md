@@ -1,3 +1,5 @@
+No permission is granted to use, modify or share this work for anyone other than the collaborators.
+
 # Fund-a-Dev
 An Ethereum based inclusive forum dApp for developers to promote and seek funds for their projects upholding diversity and quality.
 </br>
